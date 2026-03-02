@@ -12,15 +12,9 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
-
-      - name: Install Dependencies
-        run: echo "No dependencies to install"
-
-      - name: Build Project
-        run: echo "Build completed"
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Print message
+        run: echo "Pipeline is running successfully!"
