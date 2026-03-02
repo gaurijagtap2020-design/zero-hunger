@@ -8,17 +8,14 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Print message
-        run: echo "Pipeline is running successfully!"
-        deploy:
+        run: echo "Build Successful"
+
+  deploy:
     needs: build
     runs-on: ubuntu-latest
 
